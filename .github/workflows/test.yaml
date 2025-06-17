@@ -33,13 +33,13 @@ jobs:
 
       - name: Display folder name from env
         run: |
-         echo "Folder to check: $TARGET_FOLDER"
+         echo "Folder to check: ${{env.TARGET_FOLDER}}"
 
       - name: Check if folder exists
         run: |
-          if [ -d "$TARGET_FOLDER" ]; then
-            echo "✅ Folder '$TARGET_FOLDER' exists."
+          if [ -d ${{env.TARGET_FOLDER"}} ]; then
+            echo "✅ Folder '${{env.TARGET_FOLDER}}' exists."
           else
-            echo "❌ Folder '$TARGET_FOLDER' does not exist."
+            echo "❌ Folder '${{env.TARGET_FOLDER}}' does not exist."
             exit 1
           fi
