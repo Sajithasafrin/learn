@@ -1,0 +1,28 @@
+name: Simple Demo Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Your name'
+        required: true
+        default: 'World'
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    outputs:
+      user_name: ${{ steps.set-name.outputs.user_name }}
+    steps:
+      - name: Set user name from input
+        id: set-name
+        run: echo "user_name=${{ github.event.inputs.name }}" >> $GITHUB_OUTPUT
+
+  hello:
+    runs-on: ubuntu-latest
+    needs: greet
+    env:
+      USER_NAME: ${{ needs.greet.outputs.user_name }}
+    steps:
+      - name: Say hello
+        run: echo "Hello, ${{ env.USER_NAME }}!"
