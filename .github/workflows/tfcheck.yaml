@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - '/workspaces/learn/github/class6/dummy.tf'
+      - '/github/class6/dummy.tf'
     
   jobs:
   terraform-fmt:
