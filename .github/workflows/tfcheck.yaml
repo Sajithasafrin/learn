@@ -5,9 +5,9 @@ on:
     branches:
       - main
     paths:
-      - '/workspaces/learn/github/class6/dummy.tf'
-    
-  jobs:
+      - '/github/class6/dummy.tf'
+
+jobs:
   terraform-fmt:
     name: Terraform Format Check
     runs-on: ubuntu-latest
