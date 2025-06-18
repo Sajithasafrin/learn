@@ -1,0 +1,45 @@
+name: Demo GitHub Action Workflow on Windows
+
+on:
+  workflow_dispatch:
+    inputs:
+      folder_name:
+        description: "Name of the folder to check"
+        required: true
+        default: "my-folder"
+
+jobs:
+  prepare:
+    runs-on: windows-latest
+    outputs:
+      folder: ${{ steps.set-folder.outputs.folder }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set folder from input
+        id: set-folder
+        run: |
+         echo "folder=${{ github.event.inputs.folder_name }}" >> $GITHUB_OUTPUT
+
+  check-folder:
+    runs-on: windows-latest
+    needs: prepare
+    env:
+      TARGET_FOLDER: ${{ needs.prepare.outputs.folder }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Display folder name from env
+        run: |
+         echo "Folder to check: ${{ env.TARGET_FOLDER }}"
+
+      - name: Check if folder exists
+        run: |
+          if [ -d ${TARGET_FOLDER} ]; then
+            echo "✅ Folder '${TARGET_FOLDER}' exists."
+          else
+            echo "❌ Folder '${TARGET_FOLDER}' does not exist."
+          fi
+          echo "Folder check completed successfully."
