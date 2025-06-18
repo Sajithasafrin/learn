@@ -1,4 +1,4 @@
-name: Demo GitHub Action Workflow on Windows
+name: Demo GitHub Action Workflow on Windows & macOS
 
 on:
   workflow_dispatch:
@@ -20,9 +20,9 @@ jobs:
       - name: Set folder from input
         id: set-folder
         run: |
-         echo "folder=${{ github.event.inputs.folder_name }}" >> $GITHUB_OUTPUT
+          echo "folder=${{ github.event.inputs.folder_name }}" >> $GITHUB_OUTPUT
 
-  check-folder:
+  check-folder-windows:
     runs-on: windows-latest
     needs: prepare
     env:
@@ -31,15 +31,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Display folder name from env
+      - name: Display folder name from env (Windows)
+        shell: pwsh
         run: |
-         echo "Folder to check: ${{ env.TARGET_FOLDER }}"
+          Write-Host "Folder to check: $env:TARGET_FOLDER"
 
-      - name: Check if folder exists
+      - name: Check if folder exists (Windows)
+        shell: pwsh
         run: |
-          if [ -d ${TARGET_FOLDER} ]; then
-            echo "✅ Folder '${TARGET_FOLDER}' exists."
-          else
-            echo "❌ Folder '${TARGET_FOLDER}' does not exist."
-          fi
-          echo "Folder check completed successfully."
+          if (Test-Path -Path $env:TARGET_FOLDER -PathType Container) {
+            Write-Host "✅ Folder '$env:TARGET_FOLDER' exists."
+          }
+          else {
+            Write-Host "❌ Folder '$env:TARGET_FOLDER' does not exist."
+          }
+          Write-Host "Folder check completed successfully."
+
+
