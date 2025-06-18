@@ -32,7 +32,8 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Display folder name from env
-        run: echo "Folder to check: $TARGET_FOLDER"
+        run: |
+         echo "Folder to check: $TARGET_FOLDER"
 
       - name: Check if folder exists
         run: |
