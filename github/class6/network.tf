@@ -203,4 +203,4 @@ resource "aws_nat_gateway" "nat_2" {
   }
 }
 
-# SG ##  rds <- 5432 -> ecs <- 8000 -> lb <- 80/443 -> internet
+
