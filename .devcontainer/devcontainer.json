@@ -1,0 +1,9 @@
+{
+  "name": "Terraform Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "settings": {},
+  "postCreateCommand": "terraform -v",
+  "remoteUser": "vscode"
+}
