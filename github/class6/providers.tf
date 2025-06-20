@@ -34,4 +34,4 @@ terraform {
     key    = "terraform-state"
     region = "ap-south-1"
   }
-}
+
