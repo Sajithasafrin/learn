@@ -1,7 +1,7 @@
 name: on-pr-main-day6 
 
 on:
-  pull_request:
+  push:
     branches:
       - main
     paths:
