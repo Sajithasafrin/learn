@@ -58,6 +58,12 @@ resource "aws_subnet" "public_2" {
     Name = "ECS Fargate Public Subnet 2"
   }
 }
+
+#datablock
+data "aws_availability_zones" "available_zones" {
+  state = "available"
+}
+
 # 2 private subnet for database
 resource "aws_subnet" "rds_1" {
   # cidr_block        = "10.0.5.0/24"

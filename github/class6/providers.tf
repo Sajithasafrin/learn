@@ -17,21 +17,5 @@ terraform {
   }
 }
 
-provider "aws" {
-  region = "ap-south-1"
-  default_tags {
-    tags = {
-      Owner = "Akhilesh"
-      email = "lvingdevops.com"
-      repo  = "may-bootcamp"
-    }
-  }
-}
 
-terraform {
-  backend "s3" {
-    bucket = "state-bucket-879381241087"
-    key    = "terraform-state"
-    region = "ap-south-1"
-  }
 
