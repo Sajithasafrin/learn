@@ -2,7 +2,7 @@
 FROM mcr.microsoft.com/devcontainers/base:ubuntu
 
 # Install dependencies and Terraform
-ARG TERRAFORM_VERSION=1.8.4
+ARG TERRAFORM_VERSION=1.8.1
 
 RUN apt-get update && \
     apt-get install -y curl unzip gnupg software-properties-common && \
