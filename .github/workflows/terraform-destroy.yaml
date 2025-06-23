@@ -27,6 +27,6 @@ jobs:
         working-directory: ${{ env.TERRAFORM_PATH }}
         run: terraform init 
 
-      - name: Terraform Apply
+      - name: Terraform destroy
         working-directory: ${{ env.TERRAFORM_PATH }}
         run: terraform destroy  -auto-approve
