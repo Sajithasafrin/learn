@@ -31,7 +31,8 @@ terraform {
     bucket = "trial-demo11"
     key    = "terraform.tfstate"
     region = "eu-west-2"
-    }
+
+  }
 }
 
 
