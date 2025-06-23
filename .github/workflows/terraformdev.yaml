@@ -1,5 +1,4 @@
-
-name: on-pr-main-day6 
+name: on-pr-main-day6-Terraform-plan
 
 on:
   pull_request:
