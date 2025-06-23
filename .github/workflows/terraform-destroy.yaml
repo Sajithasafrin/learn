@@ -12,7 +12,7 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       AWS_REGION: eu-west-2
       TERRAFORM_VER: 1.8.1
-      TERRAFORM_PATH: class6/infra
+      TERRAFORM_PATH: 'github/class6'
 
     steps:
       - name: Checkout Repository
