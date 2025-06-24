@@ -1,17 +1,17 @@
 
 variable "region" {
   description = "The region in which the resources will be created"
-  default     = "eu-west-2"
+  default     = "ap-south-1"
 }
 
 variable "zone1" {
   description = "The availability zone 1"
-  default     = "eu-west-2a"
+  default     = "ap-south-1a"
 }
 
 variable "zone2" {
   description = "The availability zone 2"
-  default     = "eu-west-2b"
+  default     = "ap-south-1b"
 }
 
 variable "vpc_cidr" {
