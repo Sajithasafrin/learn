@@ -49,8 +49,13 @@ variable "db_default_settings" {
 # application details
 
 variable "app_domain" {
-  default = "sajitha.com"
+  default = "sajitha.tech"
 }
+
+variable "hosted_zone" {
+  default = "sajitha.tech"
+}
+
 variable "tag" {
   description = "value for the tag"
   default     = "latest"
