@@ -22,11 +22,11 @@ resource "aws_route53_record" "app" {
 # SSL  certificate _> AWS cert manager
 # # Create an ACM certificate
 resource "aws_acm_certificate" "cert" {
-  domain_name       = data.aws_route53_zone.main.name
+  domain_name       = "sajitha.tech"
   validation_method = "DNS"
 
   tags = {
-    Name = data.aws_route53_zone.main.name
+    Name = "sajitha.tech"
   }
 }
 # # Create a DNS validation record
