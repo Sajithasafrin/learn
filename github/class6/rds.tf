@@ -82,7 +82,7 @@ resource "aws_db_instance" "postgres" {
   storage_encrypted     = true
   storage_type          = "gp3"
   kms_key_id            = aws_kms_key.rds_kms.arn
-  skip_final_snapshot   = false
+  skip_final_snapshot   = true
   vpc_security_group_ids = [
     aws_security_group.rds.id
   ]
