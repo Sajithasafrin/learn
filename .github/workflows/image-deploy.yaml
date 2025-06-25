@@ -37,7 +37,7 @@ jobs:
         - name: Build and push
           uses: docker/build-push-action@v6
           with:
-            context: "{{defaultContext}}:github/class6/src/app"
+            context: "{{defaultContext}}:github/class6/src"
             push: true
             tags: ${{ env.IMAGE_REPO_NAME }}:${{ env.IMAGE_TAG }}
 
