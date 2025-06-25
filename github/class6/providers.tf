@@ -31,7 +31,6 @@ terraform {
     bucket = "trial-demo-1234"
     key    = "terraform.tfstate"
     region = "ap-south-1"
-
   }
 }
 
