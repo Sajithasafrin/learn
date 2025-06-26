@@ -49,7 +49,7 @@ variable "db_default_settings" {
 # application details
 
 variable "app_domain" {
-  default = "sajitha.tech"
+  default = "sajitha.co.uk"
 }
 
 variable "hosted_zone" {

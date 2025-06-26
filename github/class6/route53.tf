@@ -1,5 +1,5 @@
 
-# pull dns public xzone data
+## pull dns public xzone data
 data "aws_route53_zone" "main" {
   name         = var.app_domain
   private_zone = false
