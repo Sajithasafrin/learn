@@ -48,7 +48,7 @@ resource "random_password" "dbs_random_string" {
 
 # secret manager and the secret key 
 resource "aws_secretsmanager_secret" "db_link" {
-  name                    = "db/${aws_db_instance.postgres.identifier}-v2"
+  name                    = "db/${aws_db_instance.postgres.identifier}-v3"
   description             = "DB link"
   kms_key_id              = aws_kms_key.rds_kms.arn
   recovery_window_in_days = 30

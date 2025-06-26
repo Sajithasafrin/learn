@@ -22,7 +22,7 @@ locals {
 }
 
 resource "aws_secretsmanager_secret" "app_deploy_data" {
-  name        = "${var.environment}-${var.app_name}-deploy-data"
+  name        = "${var.environment}-${var.app_name}-deploynew1-data"
   description = "Deployment data for the student portal app"
 }
 
