@@ -53,7 +53,7 @@ variable "app_domain" {
 }
 
 variable "hosted_zone" {
-  default = "sajitha.tech"
+  default = "sajitha.co.uk"
 }
 
 variable "tag" {

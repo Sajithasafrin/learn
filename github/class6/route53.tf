@@ -1,3 +1,4 @@
+
 # pull dns public xzone data
 data "aws_route53_zone" "main" {
   name         = var.app_domain
@@ -22,11 +23,11 @@ resource "aws_route53_record" "app" {
 # SSL  certificate _> AWS cert manager
 # # Create an ACM certificate
 resource "aws_acm_certificate" "cert" {
-  domain_name       = "sajitha.tech"
+  domain_name       = data.aws_route53_zone.main.name
   validation_method = "DNS"
 
   tags = {
-    Name = "sajitha.tech"
+    Name = data.aws_route53_zone.main.name
   }
 }
 # # Create a DNS validation record
