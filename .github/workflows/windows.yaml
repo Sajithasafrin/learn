@@ -1,4 +1,4 @@
-name: Demo GitHub Action Workflow on Windows & macOS
+name: class 5 - runner types-windows
 
 on:
   workflow_dispatch:
