@@ -19,8 +19,10 @@ jobs:
 
       - name: Set folder from input
         id: set-folder
+        shell: pwsh
         run: |
-          echo "folder=${{ github.event.inputs.folder_name }}" >> $GITHUB_OUTPUT
+        echo "folder=${{ github.event.inputs.folder_name }}" >> $env:GITHUB_OUTPUT
+
 
   check-folder-windows:
     runs-on: windows-latest
@@ -33,8 +35,7 @@ jobs:
 
       - name: Display folder name from env (Windows)
         shell: pwsh
-        run: |
-          Write-Host "Folder to check: $env:TARGET_FOLDER"
+        run: Write-Host "Folder to check: $env:TARGET_FOLDER"
 
       - name: Check if folder exists (Windows)
         shell: pwsh
