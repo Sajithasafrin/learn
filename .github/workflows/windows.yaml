@@ -1,4 +1,4 @@
-name: class 5 - runner types-windows
+name: class5-runnertypes-windows
 
 on:
   workflow_dispatch:
