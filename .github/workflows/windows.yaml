@@ -21,7 +21,7 @@ jobs:
         id: set-folder
         shell: pwsh
         run: |
-        echo "folder=${{ github.event.inputs.folder_name }}" >> $env:GITHUB_OUTPUT
+         echo "folder=${{ github.event.inputs.folder_name }}" >> $env:GITHUB_OUTPUT
 
 
   check-folder-windows:
