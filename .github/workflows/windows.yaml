@@ -35,7 +35,8 @@ jobs:
 
       - name: Display folder name from env (Windows)
         shell: pwsh
-        run: Write-Host "Folder to check: $env:TARGET_FOLDER"
+        run: |
+         Write-Host "Folder to check: $env:TARGET_FOLDER"
 
       - name: Check if folder exists (Windows)
         shell: pwsh
