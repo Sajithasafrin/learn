@@ -1,5 +1,5 @@
 
-name: studentportal build
+name: studentportal image build & deploy
 
 on:
   # push:

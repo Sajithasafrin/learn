@@ -1,4 +1,4 @@
-name: Demo GitHub Action Workflow on macOS
+name: Class5 Runner Types - macOS
 
 on:
   workflow_dispatch:

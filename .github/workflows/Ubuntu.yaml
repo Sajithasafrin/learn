@@ -1,4 +1,4 @@
-name: Demo GitHub Action Workflow
+name: class5-runnertypes-ubuntu
 
 on:
   workflow_dispatch:

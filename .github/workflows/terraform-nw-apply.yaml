@@ -1,4 +1,4 @@
-name: on-pr-main-day6-Terraform-apply 
+name: class6&7 assignment-Terraform-apply 
 
 on:
   push:

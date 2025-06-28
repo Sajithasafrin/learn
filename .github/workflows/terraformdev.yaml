@@ -1,4 +1,4 @@
-name: on-pr-main-day6-Terraform-plan
+name: Day6 Assignment-Terraform-plan
 
 on:
   pull_request:
