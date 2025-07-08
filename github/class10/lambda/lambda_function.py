@@ -84,7 +84,7 @@ def send_email(msg, to_emails):
     return response.get('MessageId', None)
 
 
-def main(event=None, context=None):
+def lambda_handler(event=None, context=None):
     #user_data = process_group_users(GROUP_NAME)
     #print("📦 Processed User Data:", user_data)  # DEBUG
     for username, email_body in process_group_users(GROUP_NAME):
@@ -92,11 +92,6 @@ def main(event=None, context=None):
         email_msg = build_email_message(TO_EMAIL, FROM_EMAIL, subject, email_body)
         email_sent = send_email(email_msg, [TO_EMAIL])
         print(f"✅ Email sent for {username} with Message ID: {email_sent}")
-
-
-# If running locally (outside Lambda)
-if __name__ == "__main__":
-    main()
 
 
 

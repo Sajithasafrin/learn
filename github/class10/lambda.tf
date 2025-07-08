@@ -34,6 +34,7 @@ resource "aws_iam_policy" "lambda_policy" {
     Statement = [
       {
         Action = [
+          "iam:GetGroup",
           "iam:ListAccessKeys",
         ]
         Effect   = "Allow"
@@ -80,8 +81,8 @@ resource "aws_lambda_function" "my_lambda_function" {
 # create an event
 resource "aws_cloudwatch_event_rule" "cron_lambdas" {
   name                = "cronjob"
-  description         = "to triggr lambda daily 7.15 pm ist"
-  schedule_expression = "cron(0 8 * * ? *)"
+  description         = "to triggr lambda daily 8:20 pm BST"
+  schedule_expression = "cron(20 19 * * ? *)"
 }
 resource "aws_cloudwatch_event_target" "cron_lambdas" {
   rule = aws_cloudwatch_event_rule.cron_lambdas.name
