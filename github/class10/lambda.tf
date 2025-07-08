@@ -81,7 +81,7 @@ resource "aws_lambda_function" "my_lambda_function" {
 # create an event
 resource "aws_cloudwatch_event_rule" "cron_lambdas" {
   name                = "cronjob"
-  description         = "to triggr lambda daily 8:20 pm BST"
+  description         = "to trigger lambda daily 8:20 pm BST"
   schedule_expression = "cron(20 19 * * ? *)"
 }
 resource "aws_cloudwatch_event_target" "cron_lambdas" {
