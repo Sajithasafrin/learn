@@ -1,2 +1,3 @@
 .terraform
 .terraform.lock.hcl
+github/class10/.terraform.lock.hcl
