@@ -2,3 +2,5 @@
 .terraform.lock.hcl
 github/class10/.terraform.lock.hcl
 github/class15/get-pip.py
+github/class15/myenv
+/workspaces/learn/github/class15/myenv
