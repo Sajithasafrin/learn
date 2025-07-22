@@ -1,0 +1,1 @@
+{"filename": "builds/7a823c649f8e35c152f73a4a91730104c3f43f705d2b39fe25fa125b81b072d2.zip", "runtime": "python3.12", "artifacts_dir": "builds", "build_plan": [[["zip", "../lambdas/lambda1", null]]]}

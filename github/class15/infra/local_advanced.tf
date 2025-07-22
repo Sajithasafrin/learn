@@ -36,7 +36,7 @@ locals {
 
 }
 
-output "replication_info" {
-  value = local.s3_replication_info
+# output "replication_info" {
+# value = local.s3_replication_info
 
-}
+# }
