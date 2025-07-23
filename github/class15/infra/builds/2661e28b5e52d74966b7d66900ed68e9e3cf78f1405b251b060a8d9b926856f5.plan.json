@@ -1,1 +1,0 @@
-{"filename": "builds/2661e28b5e52d74966b7d66900ed68e9e3cf78f1405b251b060a8d9b926856f5.zip", "runtime": "python3.12", "artifacts_dir": "builds", "build_plan": [[["pip", "python3.12", "./../layers/layer2/requirements.txt", "python", null], ["zip", "../layers/layer2", "python"]]]}
