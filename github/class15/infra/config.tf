@@ -3,7 +3,7 @@ locals {
 
     {
       name        = "lambda1"
-      path        = "../lambdas/lambda1"
+      path        = "${path.module}/lambdas/lambda1"
       handler     = "main.lambda_handler"
       description = "My awesome lambda function"
       runtime     = "python3.12"
@@ -12,12 +12,29 @@ locals {
         Version = "2012-10-17"
         Statement = [
           {
-            Action   = ["s3:*"]
-            Effect   = "Allow"
-            Resource = "*"
+            Effect = "Allow"
+            Action = [
+              "s3:ListBucket"
+            ]
+            Resource = "arn:aws:s3:::${var.environment}-inbound-bucket-${data.aws_caller_identity.current.account_id}"
+          },
+          {
+            Effect = "Allow"
+            Action = [
+              "s3:GetObject"
+            ]
+            Resource = "arn:aws:s3:::${var.environment}-inbound-bucket-${data.aws_caller_identity.current.account_id}/*"
+          },
+          {
+            Effect = "Allow"
+            Action = [
+              "s3:PutObject"
+            ]
+            Resource = "arn:aws:s3:::${var.environment}-intermediate-bucket-${data.aws_caller_identity.current.account_id}/*"
           }
         ]
       })
+
       environments_variables = {
         source_bucket      = "${var.environment}-inbound-bucket-${data.aws_caller_identity.current.account_id}"
         destination_bucket = "${var.environment}-intermediate-bucket-${data.aws_caller_identity.current.account_id}"
@@ -25,7 +42,7 @@ locals {
     },
     {
       name        = "lambda2"
-      path        = "../lambdas/lambda2"
+      path        = "${path.module}/lambdas/lambda2"
       handler     = "main.lambda_handler"
       description = "My awesome lambda function 2"
       runtime     = "python3.12"
@@ -50,13 +67,13 @@ locals {
   layers_info = [
     {
       name                = "layer1"
-      path                = "layers/layer1"
+      path                = "${path.module}/layers/layer1"
       description         = "pandas"
       compatible_runtimes = ["python3.12", "python3.13", "python3.11"]
     },
     {
       name                = "layer2"
-      path                = "layers/layer2"
+      path                = "${path.module}/layers/layer2"
       description         = "openpyxl"
       compatible_runtimes = ["python3.12", "python3.13", "python3.11"]
     }

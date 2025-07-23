@@ -9,11 +9,16 @@ module "lambda_function" {
   publish       = true
   timeout       = 60
 
-  source_path = each.value.path
+  # source_path = each.value.path
+  source_path = "${path.module}/lambdas/${each.value.name}"
 
-    layers = each.value.layers
+  store_on_s3 = true
+  s3_bucket   = "storage-layer-1"
+  layers      = each.value.layers
 
   environment_variables = each.value.environments_variables
+  attach_policy_json    = true
+  policy_json           = each.value.policy
 
   tags = {
     repo = "may-bootcamp/class14"

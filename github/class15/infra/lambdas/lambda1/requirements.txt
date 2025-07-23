@@ -1,0 +1,6 @@
+boto3 
+pandas 
+pillow 
+reportlab 
+openpyxl
+docx2pdf
