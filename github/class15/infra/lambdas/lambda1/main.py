@@ -22,10 +22,19 @@ def list_files(bucket):
     response = s3.list_objects_v2(Bucket=bucket)
     return [item['Key'] for item in response.get('Contents', [])]
 
+
+
+
 def txt_to_pdf(file_bytes):
     buffer = io.BytesIO()
     c = canvas.Canvas(buffer, pagesize=letter)
-    text = file_bytes.decode('utf-8')
+
+    # Attempt UTF-8 decoding first, fall back to Windows-1252 if needed
+    try:
+        text = file_bytes.decode('utf-8')
+    except UnicodeDecodeError:
+        text = file_bytes.decode('windows-1252')
+
     y = 750
     for line in text.split('\n'):
         c.drawString(50, y, line)
@@ -36,6 +45,9 @@ def txt_to_pdf(file_bytes):
     c.save()
     buffer.seek(0)
     return buffer
+
+
+
 
 def jpeg_to_pdf(file_bytes):
     image = Image.open(io.BytesIO(file_bytes)).convert('RGB')

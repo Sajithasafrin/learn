@@ -18,6 +18,6 @@ variable "kms_key_arn" {
 variable "allowd_ip_list" {
   type = list(string)
   default = [
-    "65.0.7.191/32"
+    "10.146.161.7/32"
   ]
 }
