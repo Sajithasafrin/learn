@@ -4,6 +4,17 @@
     "dockerfile": "Dockerfile"
   },
   "settings": {},
-  "postCreateCommand": "terraform -v",
-  "remoteUser": "vscode"
+  "postCreateCommand": "terraform -v && docker --version",
+  "remoteUser": "vscode",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  }
 }
+
